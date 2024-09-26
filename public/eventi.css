@@ -1,0 +1,337 @@
+
+@keyframes navBar {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 10%;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    transition: background-color 0.3s, color 0.3s;
+}
+.h1title {
+    color: whitesmoke;
+}
+/* Contenitore del menu laterale */
+.leftNav {
+    width: 5px;
+    height: 100%;
+    background:linear-gradient(whitesmoke,silver,grey,black);
+    color: whitesmoke;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 0.5s ease;
+    overflow-x: hidden; /* Nasconde il contenuto quando la larghezza è 0 */
+}
+
+/* Quando l'utente passa il mouse sul menu, la larghezza aumenta */
+.leftNav:hover {
+    width: 250px; /* Larghezza del menu visibile */
+}
+
+/* Stile dei link all'interno del menu */
+.linkNav {
+    display: block;
+    padding: 10px;
+    color: whitesmoke;
+    text-decoration: none;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+    font-size: 22px;
+    text-align: center;
+    margin-top: 180px;
+    transition: background-color 0.3s ease;
+ 
+}
+
+/* Effetto hover sui link */
+.linkNav:hover {
+    background-color: rgb(51, 41, 41);
+}
+
+/* Nasconde i link inizialmente quando il menu è chiuso */
+.li-nav {
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Quando il menu è aperto (hover sul contenitore), i link diventano visibili */
+.leftNav:hover .li-nav {
+    opacity: 1;
+}
+
+/* Bordo dei singoli elementi del menu */
+.li-nav {
+    width: 100%;
+    height: 30px;
+    padding: 5px 0;
+}
+
+.dark-mode {
+    background-color: #2b2b2b;
+    color: #f1f1f1;
+}
+
+.light-mode {
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+    background-color: #1a1a1a;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #444;
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+}
+
+header .logo img {
+    width: 50px;
+    margin-right: 15px;
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-right: 20px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: #f1f1f1;
+    font-size: 16px;
+}
+
+header #theme-toggle {
+    padding: 10px 20px;
+    background-color: #444;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}
+#theme-toggle:hover {
+    background-color: silver;
+    color: grey;
+}
+.hero {
+    text-align: center;
+    padding: 50px;
+    background-image: url('../src/img/LoadingScreen_2024.png');
+    background-size: cover;
+    background-position: center;
+    color: #f1f1f1;
+}
+
+#countdown {
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+#timer {
+    margin-top: 10px;
+    font-size: 30px;
+}
+
+footer {
+    background-color: #1a1a1a;
+    text-align: center;
+    padding: 15px;
+    border-top: 2px solid #444;
+}
+
+footer p {
+    color: #f1f1f1;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+.comment-section {
+    width: 800px;
+    height: 600px;
+    border: 10px ridge grey;
+    border-radius: 15px;
+    margin-left: 33%;
+    margin-top: 10%;
+    overflow-y: auto;
+    color: whitesmoke;
+}
+#comments {
+    margin-top: 50px;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+    color: black;
+    border-radius: 15px;
+    list-style: none;
+    font-size: 22px;
+    background-color: whitesmoke;
+    
+}
+#commentList {
+   
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+.fa-facebook {
+    background: #3B5998;
+    color: white;
+    margin-top: 20px;
+  }
+  .fa-youtube {
+    background: #bb0000;
+    color: white;
+    margin-top: 20px;
+  }
+  .fa-instagram {
+    background: #125688;
+    color: white;
+    margin-top: 20px;
+  }
+  /* Media query per schermi di piccole dimensioni (smartphone) */
+@media screen and (max-width: 768px) {
+    header {
+        flex-direction: column;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    .leftNav {
+        width: 100%;
+        height: auto;
+        position: relative;
+    }
+
+    .hero {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    footer {
+        padding: 10px;
+    }
+
+    footer ul {
+        flex-direction: column;
+    }
+
+    .container-imgs {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Countdown per l'evento */
+    #timer {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    #timer span {
+        display: inline-block;
+        font-size: 1.2em;
+    }
+    #comments {
+        margin-top: 50px;
+        padding-top: 10px;
+        color: black;
+        border-radius: 15px;
+        list-style: none;
+        font-size: 16px;
+        background-color: whitesmoke;
+        
+    }
+    .comment-section {
+        width: 800px;
+        height: 600px;
+        border: 10px ridge grey;
+        border-radius: 15px;
+        margin-left: 33%;
+        margin-top: 10%;
+        overflow-y: auto;
+        color: whitesmoke;
+    }
+}
+
+/* Media query per schermi ancora più piccoli (max 480px) */
+@media screen and (max-width: 480px) {
+    body {
+        width: 100%;
+        height: 100%;
+    }
+    header {
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        margin: 5px 0;
+    }
+
+    .leftNav {
+        display: none; /* Nascondi il menu laterale su schermi molto piccoli */
+    }
+
+    .hero video {
+        width: 100%;
+    }
+
+    .socials a {
+        margin: 5px;
+    }
+    #comments {
+        margin-top: 50px;
+        padding-top: 10px;
+        color: black;
+        border-radius: 15px;
+        list-style: none;
+        font-size: 16px;
+        background-color: whitesmoke;
+        
+    }
+    .comment-section {
+        width: 800px;
+        height: 600px;
+        border: 10px ridge grey;
+        border-radius: 15px;
+        margin-left: 33%;
+        margin-top: 10%;
+        overflow-y: auto;
+        color: whitesmoke;
+    }
+    .bacheca {
+        width: 100%;
+        height: 100%;
+        font-size: 16px;
+    }
+}
